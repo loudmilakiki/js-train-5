@@ -1,7 +1,9 @@
 // Завдання 1: Дано масив, використовуючи цикл "for in" виведіть на консоль всі індекси цього масиву
 function printIndexes(array) {
-  for (const index in array);
-  console.log(array);
+  for (const index in array) {
+    console.log(index);
+  }
+
   // Проходимося по всіх індексах масиву
   // Виводимо кожен індекс на консоль
 }
@@ -33,11 +35,11 @@ console.log("sumArray([1, 2, 3, 4, 5])", sumArray([1, 2, 3, 4, 5])); // Виве
 
 // Завдання 3: Дано масив, використовуючи цикл "for of" знайдіть добуток всіх елементів масиву
 function multiplyArray(array) {
-  let multiply = 1;
-  for (const i of array) {
-    multiply *= i;
+  let multiplay = 1;
+  for (let i of array) {
+    multiplay *= i;
   }
-  return multiply;
+  return multiplay;
   // Ініціалізуємо змінну для зберігання добутку
   // Проходимося по всіх значеннях масиву
   // Множимо кожен елемент на загальний добуток
@@ -50,13 +52,12 @@ console.log("multiplyArray([1, 2, 3, 4, 5])", multiplyArray([1, 2, 3, 4, 5])); /
 // Завдання 4: Дано масив рядків. За допомогою циклу for переберіть масив, видаліть третій елемент масиву та перетворіть кожен елемент в рядок за допомогою методу toString(). Результат виведіть на консоль.
 function modifyArray(array) {
   for (const i = 0; i < array.lenght; i++) {
-    array[i] = array[i].toStrings();
+    array[i] = array[i].toString();
   }
-
-  // Видаляємо третій елемент масиву
   delete array[2];
-  // Виводимо масив перетворений в рядок
   console.log(array.toString());
+  // Видаляємо третій елемент масиву
+  // Виводимо масив перетворений в рядок
 }
 
 console.log("Завдання 4 ====================================");
@@ -80,7 +81,6 @@ printUppercase(["one", "two", "three"]); // Виведе ONE TWO THREE
 function findMinMax([firstElement, ...restElements]) {
   let min = firstElement;
   let max = firstElement;
-
   for (let element of restElements) {
     if (element < min) {
       min = element;
@@ -105,8 +105,9 @@ findMinMax([5, 2, 8, 1, 9, 3]); // Виведе Min: 1 Max: 9
 // Перетворіть масив в рядок за допомогою методу toString() та повторіть його 2 рази. Результат виведіть на консоль.
 function printStrings(array) {
   let str = array.toString();
-  let result = str.concat(str);
+  let result = str.concat(str).trim();
   console.log(result);
+
   // Перетворюємо масив в рядок і видаляемо пробіли та виводимо його на консоль
 }
 
@@ -178,13 +179,13 @@ console.log(swapMinMax([1, 2, 3, 4, 5]));
 
 // Завдання 11: Функція приймає масив чисел. Поверніть новий масив, який містить тільки парні числа з оригінального масиву.
 function getEvenNumbers(arr) {
-  let result = [];
-  for (let i of arr) {
+  let num = [];
+  for (let i in arr) {
     if (arr[i] % 2 === 0) {
-      result.push(arr[i]);
+      num.push(arr[i]);
     }
   }
-  return result;
+  return num;
   // Створюємо пустий масив для зберігання результату
   // Проходимо через кожен елемент вхідного масиву
   // Перевіряємо чи є число парним
